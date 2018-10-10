@@ -1,212 +1,178 @@
-#include<stdio.h>
-#include<conio.h>
-#include<dos.h>
-#include<string.h>
-void dit()
-{
-	sound(1000);
-	printf(". ");
-	delay(200);
-	nosound();
-	delay(200);
+#include <stdio.h>
+#include <windows.h>
+//#include <dos.h>
+void dit(){
+  printf(".");
+  Beep(500,500);
+
 }
-void dah()
-{
-	sound(2000);
-	printf("_ ");
-	delay(600);
-	nosound();
-	delay(200);
+void dah(){
+  printf("_");
+  Beep(700,700);
 }
-void main()
+void space(){
+  printf(" -- ");
+  Beep(800,800);
+}
+
+int main(void)
 {
-	char string[200],ch;
-	int i,len,j;
-	clrscr();
-	printf("Enter string\n");
-	gets(string);
-	len=0;
-	strupr(string);
-	while(ch!='\0')
-	{
-		ch=string[len];
-		switch(ch)
-		{
-			case 'A':dit();
-				 dah();
-				 break;
-			case 'B':dah();
-				 dit();
-				 dit();
-				 dit();
-				 break;
-			case 'C':dah();
-				 dit();
-				 dah();
-				 dit();
-				 break;
-			case 'D':dah();
-				 dit();
-				 dit();
-				 break;
-			case 'E':dit();
-				 break;
-			case 'F':dit();
-				 dit();
-				 dah();
-				 dit();
-				 break;
-			case 'G':dah();
-				 dah();
-				 dit();
-				 break;
-			case 'H':dit();
-				 dit();
-				 dit();
-				 dit();
-				 break;
-			case 'I':dit();
-				 dit();
-				 break;
-			case 'J':dit();
-				 dah();
-				 dah();
-				 dah();
-				 break;
-			case 'K':dah();
-				 dit();
-				 dah();
-				 break;
-			case 'L':dit();
-				 dah();
-				 dit();
-				 dit();
-				 break;
-			case 'M':dah();
-				 dah();
-				 break;
-			case 'N':dah();
-				 dit();
-				 break;
-			case 'O':dah();
-				 dah();
-				 dah();
-				 break;
-			case 'P':dit();
-				 dah();
-				 dah();
-				 dit();
-				 break;
-			case 'Q':dah();
-				 dah();
-				 dit();
-				 dah();
-				 break;
-			case 'R':dit();
-				 dah();
-				 dit();
-				 break;
-			case 'S':dit();
-				 dit();
-				 dit();
-				 break;
-			case 'T':dah();
-				 break;
-			case 'U':dit();
-				 dit();
-				 dah();
-				 break;
-			case 'V':dit();
-				 dit();
-				 dit();
-				 dah();
-				 break;
-			case 'W':dit();
-				 dah();
-				 dah();
-				 break;
-			case 'X':dah();
-				 dit();
-				 dit();
-				 dah();
-				 break;
-			case 'Y':dah();
-				 dit();
-				 dah();
-				 dah();
-				 break;
-			case 'Z':dah();
-				 dah();
-				 dit();
-				 dit();
-				 break;
-			case '1':dit();
-				 dah();
-				 dah();
-				 dah();
-				 dah();
-				 break;
-			case '2':dit();
-				 dit();
-				 dah();
-				 dah();
-				 dah();
-				 break;
-			case '3':dit();
-				 dit();
-				 dit();
-				 dah();
-				 dah();
-				 break;
-			case '4':dit();
-				 dit();
-				 dit();
-				 dit();
-				 dah();
-				 break;
-			case '5':dit();
-				 dit();
-				 dit();
-				 dit();
-				 dit();
-				 break;
-			case '6':dah();
-				 dit();
-				 dit();
-				 dit();
-				 dit();
-				 break;
-			case '7':dah();
-				 dah();
-				 dit();
-				 dit();
-				 dit();
-				 break;
-			case '8':dah();
-				 dah();
-				 dah();
-				 dit();
-				 dit();
-				 break;
-			case '9':dah();
-				 dah();
-				 dah();
-				 dah();
-				 dit();
-				 break;
-			case '0':dah();
-				 dah();
-				 dah();
-				 dah();
-				 dah();
-				 break;
-			case ' ':printf("       ");
-				 delay(200);
-				 break;
-			default:printf("\nEnd of transmission\n");
-		}
-		printf("   ");
-		len=len+1;
-	}
-	getch();
+  char string[1000],ch;
+  int len;
+  printf("Enter The Message : \n");
+  gets(string);
+  //ch=string[len];
+  strupr(string); // Not working
+
+  for(len=0;string[len];len++){
+    ch=string[len];
+
+    if(ch==' '){
+     space();
+   }
+    if(ch=='A'||ch=='a'){
+      dit();
+			dit();
+      dah();
+			dah();
+    }else if(ch=='B'||ch=='b'){
+      dah();
+      dit();
+			dah();
+			dit();
+    }else if(ch=='C'||ch=='c'){
+      dah();
+      dit();
+			dit();
+			dah();
+    }else if(ch=='D'||ch=='d'){
+      dah();
+      dit();
+			dit();
+			dit();
+    }else if(ch=='E'||ch=='e'){
+      dah();
+			dah();
+			dah();
+      dit();
+    }else if(ch=='F'||ch=='f'){
+      dit();
+      dit();
+			dit();
+			dit();
+    }else if(ch=='G'||ch=='g'){
+      dah();
+      dit();
+			dit();
+			dah();
+    }else if(ch=='H'||ch=='h'){
+      dah();
+      dit();
+			dit();
+			dah();
+    }else if(ch=='I'||ch=='i'){
+      dah();
+      dah();
+    }else if(ch=='J'||ch=='j'){
+      dit();
+      dit();
+    }else if(ch=='K'||ch=='k'){
+      dah();
+      dit();
+			dah();
+    }else if(ch=='L'||ch=='l'){
+      dah();
+      dit();
+			dit();
+    }else if(ch=='M'||ch=='m'){
+      dah();
+      dit();
+    }else if(ch=='N'||ch=='n'){
+      dah();
+      dit();
+			dah();
+    }else if(ch=='O'||ch=='o'){
+      dah();
+      dit();
+			dit();
+    }else if(ch=='P'||ch=='p'){
+      dah();
+      dit();
+			dah();
+			dit();
+    }else if(ch=='Q'||ch=='q'){
+      dit();
+			dah();
+      dit();
+    }else if(ch=='R'||ch=='r'){
+			dit();
+			dit();
+      dah();
+      dit();
+    }else if(ch=='S'||ch=='s'){
+      dah();
+			dah();
+      dit();
+    }else if(ch=='T'||ch=='t'){
+      dah();
+			dah();
+      dit();
+    }else if(ch=='U'||ch=='u'){
+			dit();
+      dah();
+      dit();
+    }else if(ch=='V'||ch=='v'){
+      dah();
+      dit();
+			dit();
+    }else if(ch=='W'||ch=='w'){
+      dah();
+      dit();
+			dah();
+    }else if(ch=='X'||ch=='x'){
+      dah();
+      dit();
+			dah();
+    }else if(ch=='Y'||ch=='y'){
+      dah();
+			dah();
+      dit();
+    }else if(ch=='Z'||ch=='z'){
+      dah();
+			dah();
+			dit();
+      dit();
+    }else if(ch=='0'){
+      dah();
+    }else if(ch=='1'){
+      dit();
+    }else if(ch=='2'){
+      dit();
+      dit();
+    }else if(ch=='3'){
+      dah();
+      dah();
+    }else if(ch=='4'){
+      dah();
+      dit();
+			dah();
+    }else if(ch=='5'){
+      dah();
+      dit();
+    }else if(ch=='6'){
+      dah();
+      dit();
+			dit();
+    }else if(ch=='7'){
+      dah();
+    }else if(ch=='8'){
+      dit();
+    }else if(ch=='9'){
+      dah();
+      dit();
+			dah();
+    }
+
+  }
+    return 0;
 }
