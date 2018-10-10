@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <windows.h>
-//#include <dos.h>
+#include "stdio.h"
+#include "windows.h"
+
 void dit(){
   printf(".");
   Beep(500,500);
@@ -21,9 +21,6 @@ int main(void)
   int len;
   printf("Enter The Message : \n");
   gets(string);
-  //ch=string[len];
-  strupr(string); // Not working
-
   for(len=0;string[len];len++){
     ch=string[len];
 
